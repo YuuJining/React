@@ -17,22 +17,25 @@
                         second: Math.ceil(Math.random() * 9),
                         value: '',
                         result: '',
+                        comment: '',
                     };
                 }
 
                 onSubmit = (e) => {
                                 e.preventDefault();
-                                if(parseInt(value) === this.state.first * this.state.second) {
+                                if(parseInt(this.state.value) === this.state.first * this.state.second) {
                                     this.setState({
                                         result: '딩동댕',
                                     first: Math.ceil(Math.random() * 9),
                                     second: Math.ceil(Math.random() * 9),
                                     value: '',
+                                    comment: this.state.first * this.state.second,
                                     });
                                 }else {
                                     this.setState({
                                         result: '땡',
                                         value: '',
+                                        comment: '',
                                     });
                                 }   
                             };
@@ -47,7 +50,7 @@
                                 <input type="number" value={this.state.value} onChange={this.onChange} />
                                     <button>입력!</button>
                             </form>
-                            <div>{this.state.result}</div>
+                            <div>{this.state.comment}{this.state.result}</div>
                         </div>
                     );
                 }
