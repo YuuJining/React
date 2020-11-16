@@ -15,7 +15,7 @@ class App extends React.Component {
         data: { movies }
       }
     } = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating");
-    this.setState({movies, isLoading: false});
+    this.setState({movies, isLoading:false});
   };
 
   componentDidMount() {
@@ -24,6 +24,7 @@ class App extends React.Component {
   render(){
     const { isLoading, movies } = this.state;
   return (
+    <div id="potato">
     <section className="container">
       {isLoading ? (<div className="loader">
         <span className="loader_text">Loading...</span>
@@ -44,6 +45,7 @@ class App extends React.Component {
       </div>
       )}
     </section>
+    </div>
   )
   }
 }
