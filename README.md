@@ -11,6 +11,8 @@
 
 ![페이지 소개](./image/capture1.PNG)     
 
+---
+
 ### 개선방향
 * state를 Class Component가 아닌 hooks 이용해 바꿔보기   
 * 해당 영화 클릭 시 각 영화를 소개 하는 소개 페이지 추가하기   
